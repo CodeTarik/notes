@@ -6,13 +6,12 @@
     contenRef.innerHTML = "";
     
     for (let indexNote = 0; indexNote < notes.length; indexNote++){
-        const note = notes[indexNote];
-        contenRef.innerHTML += getNoteTemplate(note);
+        contenRef.innerHTML += getNoteTemplate(indexNote);
     }
     }
 
-    function getNoteTemplate(note){
-        return `<p>+ ${note}</p>`;
+    function getNoteTemplate(indexNote){
+        return `<p>+ ${notes[indexNote]}<button onclick="deleteNote(${indexNote})">Delete</button></p>`;
     }
 
 
@@ -30,10 +29,12 @@ function addNote(){
 
 //notizen löschen
 
+
+// Anzeige updaten
+
 function deleteNote(indexNote){
     notes.splice(indexNote, 1);
 
-    addNote();
     renderNotes();
 }
 
