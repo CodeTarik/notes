@@ -30,11 +30,8 @@ function addNote(){
 
 //notizen löschen
 
-function deleteNote(){
-    let noteDeleteRef = document.getElementById('note_input');
-    let noteDelete = noteDeleteRef.value;
-
-    notes.splice(noteDelete);
+function deleteNote(indexNote){
+    notes.splice(indexNote, 1);
 
     addNote();
     renderNotes();
