@@ -34,7 +34,9 @@ function deleteNote(){
     let noteDeleteRef = document.getElementById('note_input');
     let noteDelete = noteDeleteRef.value;
 
-    notes.pull(noteDelete);
+    notes.splice(noteDelete);
+
+    addNote();
     renderNotes();
 }
 
