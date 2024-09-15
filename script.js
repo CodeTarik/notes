@@ -49,9 +49,12 @@ function addNote(){
 // Anzeige updaten
 
 function deleteNote(indexNote){
-    console.log(notes.splice(indexNote, 1));
+    let trashNote = notes.splice(indexNote, 1);
+    
+    trashNotes.push(trashNote);
     
     renderNotes();
+    renderTrashNotes();
 }
 
 
