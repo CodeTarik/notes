@@ -5,20 +5,20 @@ let trashNotes = [];
 
 function renderNotes() {
     //I must define where they are to be displayed
-    let contenRef = document.getElementById('content');
-    contenRef.innerHTML = "";
+    let contentRef = document.getElementById('content');
+    contentRef.innerHTML = "";
     
     for (let indexNote = 0; indexNote < notes.length; indexNote++){
-    contenRef.innerHTML += getNoteTemplate(indexNote);
+    contentRef.innerHTML += getNoteTemplate(indexNote);
     }
 }
 
 function  renderTrashNotes(){ // Move deleted notes to the trash bin
-    let trashContenRef = document.getElementById('trash_content');
-    trashContenRef.innerHTML = "";
+    let trashContentRef = document.getElementById('trash_content');
+    trashContentRef.innerHTML = "";
         
     for (let indexTrashNote = 0; indexTrashNote < notes.length; indexTrashNote++){
-        trashContenRef.innerHTML += getNoteTemplate(indexTrashNote);
+        trashContentRef.innerHTML += getNoteTemplate(indexTrashNote);
     }
 }
 
@@ -50,7 +50,6 @@ function addNote(){
 
 function deleteNote(indexNote){
     let trashNote = notes.splice(indexNote, 1);
-    
     trashNotes.push(trashNote);
     
     renderNotes();
