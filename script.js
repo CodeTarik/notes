@@ -18,7 +18,7 @@ function  renderTrashNotes(){ // Move deleted notes to the trash bin
     trashContentRef.innerHTML = "";
         
     for (let indexTrashNote = 0; indexTrashNote < notes.length; indexTrashNote++){
-        trashContentRef.innerHTML += getNoteTemplate(indexTrashNote);
+        trashContentRef.innerHTML += getTrashNoteTemplate(indexTrashNote);
     }
 }
 
