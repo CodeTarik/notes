@@ -7,6 +7,8 @@
 
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    
+
 </head>
 <body onload="renderNotes()">
 
@@ -14,9 +16,15 @@
 
     <input id="note_input" type="text" required>
     <button onclick="addNote()">Notiz speichern</button>
-    <button onclick="deleteNote()">Notiz löschen</button>
-    <div id="content"></div>
-    
-    
+
+    <div id="content">
+    </div>
+
+    <div id="trash_content">
+
+    </div>
+
+
+
 </body>
 </html> 
