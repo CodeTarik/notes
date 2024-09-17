@@ -17,7 +17,7 @@ function  renderTrashNotes(){ // Move deleted notes to the trash bin
     let trashContentRef = document.getElementById('trash_content');
     trashContentRef.innerHTML = "";
         
-    for (let indexTrashNote = 0; indexTrashNote < notes.length; indexTrashNote++){
+    for (let indexTrashNote = 0; indexTrashNote < trashNotes.length; indexTrashNote++){
         trashContentRef.innerHTML += getTrashNoteTemplate(indexTrashNote);
     }
 }
@@ -50,11 +50,13 @@ function addNote(){
 
 function deleteNote(indexNote){
     let trashNote = notes.splice(indexNote, 1);
+
     trashNotes.push(trashNote);
     
     renderNotes();
     renderTrashNotes();
 }
+
 
 
 //notizen archivieren
