@@ -50,9 +50,7 @@ function addNote(){
 
 function deleteNote(indexNote){
     let trashNote = notes.splice(indexNote, 1);
-
     trashNotes.push(trashNote);
-    
     renderNotes();
     renderTrashNotes();
 }
