@@ -55,6 +55,10 @@ function deleteNote(indexNote){
     renderTrashNotes();
 }
 
+function trashNote() {
+    
+}
+
 
 
 //notizen archivieren
