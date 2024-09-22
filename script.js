@@ -55,8 +55,11 @@ function deleteNote(indexNote){
     renderTrashNotes();
 }
 
-function trashNote() {
-    
+function trashNote(indexTrashNote) {
+    let trashNote = trashNotes.splice(indexTrashNote, 1);
+    notes.pull(trashNote);
+    renderNotes();
+    renderTrashNotes();
 }
 
 
