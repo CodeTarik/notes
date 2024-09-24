@@ -34,10 +34,13 @@ function getTrashNoteTemplate(indexTrashNote){
 //notizen hinzufügen
 function addNote(){
     let noteInputRef = document.getElementById('note_input');
-    let noteInput = noteInputRef.value;
+    let noteInput = noteInputRef.value.trim();
 
+    if (noteInput !== ''){
     notes.push(noteInput);
     renderNotes();
+    noteInputRef.value = '';
+    }
 
     //Delete or clear again after entering the note
     noteInputRef.value = ''; 
@@ -61,3 +64,6 @@ function trashNote(indexTrashNote) {
     renderNotes();
     renderTrashNotes();
 }
+
+renderNotes();
+renderTrashNotes();
