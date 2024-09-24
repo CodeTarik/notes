@@ -27,7 +27,7 @@ function getNoteTemplate(indexNote){
 }
 
 function getTrashNoteTemplate(indexTrashNote){
-    return `<p>+ ${trashNotes[indexTrashNote]}<button onclick="deleteNote(${indexTrashNote})">Delete</button></p>`;
+    return `<p>+ ${trashNotes[indexTrashNote]}</p>`;
 }
 
 
@@ -50,18 +50,14 @@ function addNote(){
 
 function deleteNote(indexNote){
     let trashNote = notes.splice(indexNote, 1);
-    trashNotes.push(trashNote);
+    trashNotes.push(trashNote[0]);
     renderNotes();
     renderTrashNotes();
 }
 
 function trashNote(indexTrashNote) {
     let trashNote = trashNotes.splice(indexTrashNote, 1);
-    notes.pull(trashNote);
+    notes.push(trashNote[0]);
     renderNotes();
     renderTrashNotes();
 }
-
-
-
-//notizen archivieren
